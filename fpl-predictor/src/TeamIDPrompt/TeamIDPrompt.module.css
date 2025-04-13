@@ -1,0 +1,56 @@
+.promptContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.promptBox {
+  background: #fff;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  color: black;
+}
+
+.promptBox h2 {
+  margin-top: 0;
+}
+
+.promptBox p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+}
+
+.promptBox form {
+  margin-top: 1rem;
+}
+
+.promptBox input {
+  padding: 0.5rem;
+  width: 80%;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.promptBox button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #37003C;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.promptBox button:hover {
+  background-color: #4b0051;
+}

@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:root {
+  --fpl-purple: #37003C;
+  --fpl-green: #00B920; /* or #6AAD5F */
+  --fpl-white: #FFFFFF;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 450px;  /* Increase width */
+  height: 450px; /* Increase height */
+  font-family: "Segoe UI", Arial, sans-serif; /* or any preferred font */
+}
+
+/* Make the background FPL purple */
+body {
+  background-color: var(--fpl-purple);
+  color: var(--fpl-white);
+}
+
+/* Headings, text, etc. */
+.App h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--fpl-white);
+}
+
+.App p {
+  color: var(--fpl-white);
+  font-size: 0.9rem;
+}
+
+/* Buttons with a green accent */
+.App button {
+  background-color: var(--fpl-green);
+  border: none;
+  color: var(--fpl-white);
+  font-weight: 600;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.App button:hover {
+  opacity: 0.9;
+}
+
+.App button:active {
+  opacity: 0.8;
+}
+
+/* Optional container styling for your main content */
+.container {
+}

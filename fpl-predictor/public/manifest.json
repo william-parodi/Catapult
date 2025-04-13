@@ -1,0 +1,34 @@
+{
+  "name": "FPL Forecaster",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Predicts and recommends FPL transfers",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "icons": {
+    "16": "icons/Premier_Buddy.png",
+    "48": "icons/Premier_Buddy.png",
+    "128": "icons/Premier_Buddy.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://fantasy.premierleague.com/*"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://fantasy.premierleague.com/*",
+    "https://fantasy.premierleague.com/transfers",
+    "https://localhost:5000/*"
+  ]
+}
