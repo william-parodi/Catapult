@@ -52,18 +52,22 @@ except Exception:
 
 # Predict Multi-Quantile Outputs
 features_latest = predict_multi_quantile(quantile_models, features_latest)
+features_latest['rounded_predicted'] = features_latest['predicted_points'].round(0).astype(int)
+features_latest.to_csv('data/gw32_predictions.csv', index=False)
 
 # Step 4: Display Predictions
 st.subheader("Player Predictions (Latest GW with Uncertainty)")
 st.dataframe(features_latest[['player_id', 'name', 'position', 'team', 'now_cost', 
                                'predicted_p10', 'predicted_p50', 'predicted_p90', 
-                               'predicted_points', 'predicted_risk']])
+                               'predicted_points', 'rounded_predicted', 'predicted_risk']])
 
 # Step 5: Optimize Team Based on Risk-Aware p50 Prediction
 st.write("Optimizing team selection (risk-aware)...")
-optimized_team = optimize_team(features_latest, risk_aversion=0.1)
+optimized_team = optimize_team(features_latest, risk_aversion=0.01)
+optimized_team['rounded_predicted'] = optimized_team['predicted_points'].round(0).astype(int)
+optimized_team.to_csv('data/gw32_optimized_team.csv', index=False)
 
 st.subheader("Optimized Fantasy Team")
 st.dataframe(optimized_team[['player_id', 'name', 'position', 'team', 'now_cost', 
                               'predicted_p10', 'predicted_p50', 'predicted_p90', 
-                              'predicted_points', 'predicted_risk']])
+                              'predicted_points', 'rounded_predicted', 'predicted_risk']])

@@ -45,10 +45,10 @@ def optimize_team(features_df, risk_aversion=0.1):
     prob += lpSum(x) == 15
     
     # Position constraints
-    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "Goalkeeper") == 2
-    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "Defender") >= 3
-    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "Midfielder") >= 3
-    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "Forward") >= 1
+    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "GK") == 2
+    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "DEF") == 5
+    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "MID") == 5
+    prob += lpSum(x[i] for i in range(n) if players.loc[i, 'position'] == "FWD") == 3
     
     # Team constraint: No more than 3 players per team
     teams = players['team'].unique()
